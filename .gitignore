@@ -36,7 +36,7 @@ vignettes/*.pdf
 rsconnect/
 
 #files
-./incident/
-./interview/
-./traffic/
-./procedures/
+/incident/
+/interview/
+/traffic/
+/procedures/
