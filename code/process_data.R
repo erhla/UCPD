@@ -11,7 +11,5 @@ for (folder in folder_ls){
     master_df <- rbind(master_df, cur_df)
   }
   master_df <- master_df[complete.cases(master_df),]
-  write_csv(master_df, paste0(folder))
+  write_csv(master_df, paste0(substr(folder, 1, nchar(folder) - 1), ".csv"))
 }
-
-
