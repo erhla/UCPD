@@ -1,6 +1,12 @@
 ---
 title: "Appendix 1: University of Chicago Police Department Open Data Analysis"
-output: pdf_document
+output:
+  html_document:
+    toc: true
+    toc_float: true
+    df_print: paged
+    theme: sandstone
+    number_sections: true
 ---
 
 ```{r initial_setup, include=FALSE}
@@ -8,30 +14,46 @@ library(tidyverse)
 library(lubridate)
 library(kableExtra)
 library(scales)
+library(sf)
+library(tigris)
+library(tidycensus)
+library(leaflet)
 
 knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
-
+#prepare data
 traffic <- read_csv("files/traffic_cleaned.csv")
-traffic <- traffic %>% mutate(year = year(Date),
-                              month = month(Date),
-                              year_month = str_c(year, month)) %>%
-  filter(between(year, 2015, 2019))
+traffic <- traffic %>% mutate(Year = year(Date)) %>%
+  filter(between(Year, 2015, 2019))
 
 interview <- read_csv("files/interview_cleaned.csv")
-interview <- interview %>% mutate(year = year(Date),
-                              month = month(Date),
-                              year_month = str_c(year, month)) %>%
-  filter(between(year, 2015, 2019))
+interview <- interview %>% mutate(Year = year(Date)) %>%
+  filter(between(Year, 2015, 2019))
 
 incident <- read_csv("files/incident_cleaned.csv")
-incident <- incident %>% mutate(year = year(Occured),
-                              month = month(Occured),
-                              year_month = str_c(year, month)) %>%
-  filter(between(year, 2015, 2019))
+incident <- incident %>% mutate(Year = year(Occured)) %>%
+  filter(between(Year, 2015, 2019))
 
 traffic <- traffic %>% mutate(is_black = ifelse(Race == "African American", 1, 0))
 interview <- interview %>% mutate(is_black = ifelse(Race == "African American", 1, 0))
+
+#geospatial data
+UCPD_area <- st_read("files/Areas_UCPD/Areas.shp")
+
+cook_pop <-
+  get_acs(geography = "tract",
+        variables = c("B02001_001", "B02001_002", "B02001_003"),
+        state = "17",
+        county = "031",
+        cache_table = TRUE,
+        output = "wide",
+        geometry = TRUE)
+cook_pop <- cook_pop[, -grep("\\dM", colnames(cook_pop))]
+
+cook_pop <- cook_pop %>% rename(total_pop = B02001_001E,
+                                white_pop = B02001_002E,
+                                black_pop = B02001_003E)
+cook_pop <- st_transform(cook_pop, st_crs(UCPD_area))
 ```
 
 # Introduction
@@ -42,22 +64,22 @@ Note that 2019 numbers are through December 6, 2019.
 
 ## Number of interactions with UCPD by Year
 ```{r}
-kable(traffic %>% group_by(year) %>% 
+kable(traffic %>% group_by(Year) %>% 
         summarize(Total = n(), `% African American` = percent(sum(is_black) / n(), .1)), 
-      caption="Traffic Stops", position="H")
-kable(incident %>% group_by(year) %>% 
-        summarize(Total = n()), caption="Incidents", position="H")
-kable(interview %>% group_by(year) %>% summarize(Total = n(), `% African American` = percent(sum(is_black) / n(), .1)), 
-      caption="Interviews", position="H")
+      caption="Traffic Stops") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+kable(incident %>% group_by(Year) %>% 
+        summarize(Total = n()), caption="Incidents") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+kable(interview %>% group_by(Year) %>% summarize(Total = n(), `% African American` = percent(sum(is_black) / n(), .1)), 
+      caption="Interviews") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 ```
 
 ## Traffic Outcomes
 
 ```{r}
-kable(traffic %>% group_by(year, Disposition) %>% 
+kable(traffic %>% group_by(Year, Disposition) %>% 
   summarize(Total = n()) %>% 
   pivot_wider(names_from = c("Disposition"), values_from = Total) %>%
-  mutate(Arrest = replace_na(Arrest, 0)), caption="Traffic Outcomes", position="H")
+  mutate(Arrest = replace_na(Arrest, 0)), caption="Traffic Outcomes") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
 mini_traffic <- traffic %>% filter(Disposition != "Arrest", Race != "NHPI or Indian", `IDOT Classification` != "Other")
 
@@ -76,9 +98,14 @@ violation_race <- mini_traffic %>% group_by(`IDOT Classification`, Race) %>%
   mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1)) %>% select(-Total, -`Total (by Race)`) %>% 
   pivot_wider(names_from = c("Race"), values_from = `Share in Category`)
 
-kable(dis_race %>% select(-`Total (by Race)`), caption="Traffic Outcomes by Race", position="H")
-kable(search_race %>% select(-`Total (by Race)`), caption="Traffic Search Outcomes by Race", position="H")
-kable(violation_race, caption="Traffic Violation Outcomes by Race", position="H")
+kable(dis_race %>% select(-`Total (by Race)`), caption="Traffic Outcomes by Race") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+
+kable(search_race %>% select(-`Total (by Race)`), caption="Traffic Search Outcomes by Race") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+
+kable(violation_race, caption="Traffic Violation Outcomes by Race") %>%
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 ```
 
 ## Interview Outcomes
@@ -97,8 +124,12 @@ int_disp_race <-
   left_join(race_cnts_interview) %>%
   mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1)) %>% select(-Total, -`Total (by Race)`) %>% 
   pivot_wider(names_from = c("Race"), values_from = `Share in Category`) %>% mutate(Caucasian = replace_na(Caucasian, "0%"))
-kable(int_search_race %>% select(-`Total (by Race)`), caption="Interview Search Outcomes by Race", position="H")
-kable(int_disp_race, caption="Interview Disposition Outcomes by Race", position="H")
+
+kable(int_search_race %>% select(-`Total (by Race)`), caption="Interview Search Outcomes by Race") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+
+kable(int_disp_race, caption="Interview Disposition Outcomes by Race") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 ```
 
 ## Incident Outcomes
@@ -106,6 +137,49 @@ kable(int_disp_race, caption="Interview Disposition Outcomes by Race", position=
 library(ggplot2)
 incident$Month <- as.Date(cut(incident$Occured,
   breaks = "month"))
-ggplot(incident %>% filter(year > 2015), aes(Month)) + geom_bar() + labs(y="Number of Incidents Per Month") + theme_minimal()
+ggplot(incident %>% filter(Year > 2015), aes(Month)) + geom_bar() + 
+  labs(y="Number of Incidents Per Month") + theme_minimal()
 ```
+
+## Gaps
+```{r}
+tst <- interview %>% filter(is_black==0) %>% arrange(Date) %>%
+  mutate(previous = lag(Date, 1),
+         day_difference = (Date - previous)/(60*60*24))
+
+max <- tst %>% filter(day_difference == max(day_difference, na.rm=T))
+```
+
+For over half a year from 9/17/2016 to 3/10/2017, UCPD only interviewed African Americans.
+
+# UCPD Patrol Area
+
+```{r}
+rslt <- st_join(UCPD_area, cook_pop)
+rslt <- rslt %>% as.data.frame() %>% select(-geometry) %>% left_join(cook_pop %>% select(GEOID), by=c("GEOID"))
+rslt <- st_transform(st_as_sf(rslt), 4326)
+
+kable(rslt %>% as.data.frame() %>%
+  summarize(`Total Population` = sum(total_pop),
+                   `Total White Population` = sum(white_pop),
+                   `Total Black Population` = sum(black_pop)),
+  caption="Population within UCPD Patrol Area") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+
+rslt <- rslt %>% mutate(share_non_white = (total_pop - white_pop) / total_pop)
+
+pal <- colorNumeric(palette="Blues", rslt$share_non_white, na.color="Grey")
+
+leaflet(width="100%") %>% addTiles() %>% addPolygons(data=rslt, 
+                                         fillColor = ~pal(share_non_white),
+                                          weight = 2, 
+                                          opacity = 1,
+                                          color = "grey",
+                                          dashArray = 3,
+                                          fillOpacity = 0.7) %>%
+  addLegend(pal = pal, values = rslt$share_non_white, opacity = 0.7, title = "Share Non-White Population", position = "bottomright")
+```
+
+## Github Directory
+https://github.com/erhla/UCPD
 
