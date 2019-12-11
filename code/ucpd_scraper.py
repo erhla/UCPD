@@ -73,9 +73,10 @@ def process_date_range(start_date, end_date, record_type):
     return master_ls
 
 def main(start_date, end_date, record_type, file_name):
+    #ex) main('11/01/2019', '12/06/2019', 'incident', 'incident.csv')
     master_ls = process_date_range(start_date, end_date, record_type)
     df = pd.DataFrame(master_ls)
-    df.to_csv('C:/Users/erhla/Desktop/UCPD/' + record_type + '/' + file_name)
+    df.to_csv('C:/Users/erhla/Documents/GitHub/UCPD' + '/' + file_name)
     return df
     
 

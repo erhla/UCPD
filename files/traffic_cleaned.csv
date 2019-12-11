@@ -190,12 +190,12 @@ N/A,2016-07-05T06:57:00Z,Warning,Female,Traffic Sign/Signal,5730 S Cottage Grove
 N/A,2016-07-05T15:04:00Z,Warning,Female,Lane Violation,5600 S Ellis,African American,Wrong way on one way road,No
 N/A,2016-07-05T20:12:00Z,Warning,Male,Traffic Sign/Signal,1010 E 59th,African American,Ran stop sign,No
 One citation issued for disobeying traffic control device,2016-07-08T14:48:00Z,Citation,Male,Lane Violation,6100 S Woodlawn,African American,Illegal passing,No
-N/A,2019-07-08T10:40:00Z,Warning,Female,follow too close,55th and Ellis,African American,Following too closely,No
+N/A,2019-07-08T10:40:00Z,Warning,Female,moving violation,55th and Ellis,African American,Following too closely,No
 N/A,2016-07-09T23:09:00Z,Warning,Male,Lane Violation,5700 S Woodlawn,Caucasian,Wrong way on one way road,No
 N/A,2016-07-10T11:07:00Z,Warning,Male,Lane Violation,1446 E 55th,African American,Right turn in front of CTA bus,No
 N/A,2016-07-12T18:05:00Z,Warning,Male,Traffic Sign/Signal,4900 S Dorchester,African American,Ran stop sign,No
 One citation issued for expired registration,2016-07-14T10:35:00Z,Citation,Female,Traffic Sign/Signal,5400 S Woodlawn,Caucasian,Ran red light,No
-N/A,2016-07-14T23:20:00Z,Warning,Male,follow too close,5600 S Stony Island,African American,Following too closely,No
+N/A,2016-07-14T23:20:00Z,Warning,Male,moving violation,5600 S Stony Island,African American,Following too closely,No
 Arrested by CPD for DUI and fleeing scene of accident,2016-07-16T20:26:00Z,Arrest,Male,Lane Violation,4900 S Blackstone,African American,Wrong way on one way street,No
 N/A,2016-07-17T11:36:00Z,Warning,Male,Traffic Sign/Signal,5500 S Lake Park,Caucasian,Disobeyed traffic control device,No
 N/A,2016-07-18T01:56:00Z,Warning,Female,Traffic Sign/Signal,5800 Ellis,African American,Ran stop sign,No
@@ -271,7 +271,7 @@ Two citations issued for speeding and suspended DL,2016-09-10T10:53:00Z,Citation
 N/A,2016-09-12T12:35:00Z,Warning,Male,Traffic Sign/Signal,1406 E 53rd,African American,Disobeyed traffic control device,No
 Two citations issued for disobeying traffic control device and no valid driver's license,2016-09-13T02:43:00Z,Citation,Male,Traffic Sign/Signal,5600 S Ellis,Hispanic,Ran stop sign,No
 N/A,2016-09-16T09:00:00Z,Warning,Male,Traffic Sign/Signal,850 E Midway Plaisance,African American,Failed to yield to pedestrian in crosswalk,No
-N/A,2016-09-16T16:46:00Z,Warning,Male,seatbelt,5700 S Kimbark,Caucasian,R/O observed small child hanging out of rear window,No
+N/A,2016-09-16T16:46:00Z,Warning,Male,Equipment,5700 S Kimbark,Caucasian,R/O observed small child hanging out of rear window,No
 N/A,2016-09-16T16:51:00Z,Warning,Male,Lane Violation,5700 S Kenwood,Caucasian,Wrong way on one way street,No
 N/A,2016-09-19T16:28:00Z,Warning,Male,Traffic Sign/Signal,945 E 52nd,African American,Ran stop sign,No
 N/A,2016-09-19T17:02:00Z,Warning,Female,Traffic Sign/Signal,5500 S Woodlawn,Asian,Failure to yield to pedestrian in crosswalk,No
@@ -816,7 +816,7 @@ N/A,2017-09-14T09:16:00Z,Warning,Female,Lane Violation,6300 S Drexel,African Ame
 N/A,2017-09-14T15:58:00Z,Warning,Male,Traffic Sign/Signal,1165 E 53rd,African American,Failure to yield to pedestrian in crosswalk,No
 N/A,2017-09-17T21:15:00Z,Warning,Female,Lane Violation,5200 Blackstone,African American,Wrong way on one way street,No
 N/A,2017-09-18T08:34:00Z,Warning,Male,Lane Violation,6100 S Cottage Grove,African American,Wrong way on one way street,No
-N/A,2017-09-18T08:53:00Z,Warning,Male,follow too close,5900 S Stony Island,Hispanic,Following too closely,No
+N/A,2017-09-18T08:53:00Z,Warning,Male,moving violation,5900 S Stony Island,Hispanic,Following too closely,No
 Two citations issued,2017-09-18T14:30:00Z,Citation,Female,Traffic Sign/Signal,5500 S University,African American,Failure to yield to pedestrian in crosswalk,No
 N/A,2017-09-19T10:01:00Z,Warning,Male,Lane Violation,5700 S Woodlawn,Caucasian,Wrong way on one way street,No
 N/A,2017-09-20T20:25:00Z,Warning,Female,Traffic Sign/Signal,6300 S Ellis,African American,Ran red light,No
@@ -881,7 +881,7 @@ N/A,2017-10-15T09:49:00Z,Warning,Male,Traffic Sign/Signal,5300 Kenwood,African A
 N/A,2017-10-17T15:20:00Z,Warning,Male,Lane Violation,1226 E 53rd,Asian,Wrong way on one way street,No
 N/A,2017-10-18T14:26:00Z,Warning,Male,Traffic Sign/Signal,5600 Lake Park,African American,Ran stop sign,No
 N/A,2017-10-18T14:44:00Z,Warning,Male,moving violation,5600 Kimbark,African American,Using cell phone while driving,No
-One citation issued,2017-10-18T16:23:00Z,Citation,Female,seatbelt,Midway Plaisance and Stony Island,African American,Failure to secure child in seat,No
+One citation issued,2017-10-18T16:23:00Z,Citation,Female,Equipment,Midway Plaisance and Stony Island,African American,Failure to secure child in seat,No
 N/A,2017-10-18T17:13:00Z,Warning,Female,Traffic Sign/Signal,5737 Kimbark,African American,Ran stop sign,No
 N/A,2017-10-18T19:53:00Z,Warning,Male,Lane Violation,5300 S Kenwood,African American,Wrong way on one way street,No
 N/A,2017-10-19T16:00:00Z,Warning,Female,Lane Violation,5828 Drexel,Caucasian,Right turn in front of CTA bus,No
@@ -1267,7 +1267,7 @@ N/A,2018-02-26T14:11:00Z,Warning,Female,Traffic Sign/Signal,5500 S Cottage Grove
 N/A,2018-02-26T14:11:00Z,Warning,Male,Traffic Sign/Signal,5900 S Cottage Grove,Caucasian,Ran red light,No
 N/A,2018-02-26T16:09:00Z,Warning,Female,Traffic Sign/Signal,5500 Kimbark,African American,Failure to yield to pedestrian in crosswalk,No
 N/A,2018-02-26T20:06:00Z,Warning,Male,Traffic Sign/Signal,5500 Cornell,Asian,Ran stop sign,No
-N/A,2018-02-26T21:03:00Z,Warning,Male,seatbelt,5500 Kimbark,African American,Failure to secure child in seat,No
+N/A,2018-02-26T21:03:00Z,Warning,Male,Equipment,5500 Kimbark,African American,Failure to secure child in seat,No
 N/A,2018-02-27T08:41:00Z,Warning,Male,speed,1155 E Midway Plaisance,African American,Speeding,No
 N/A,2018-02-27T09:08:00Z,Warning,Female,speed,1116 E Midway Plaisance,African American,Speeding,No
 N/A,2018-02-27T20:01:00Z,Warning,Male,Traffic Sign/Signal,5135 Blackstone,African American,Ran stop sign,No
@@ -1826,20 +1826,20 @@ N/A,2018-06-16T09:51:00Z,Warning,Male,Lane Violation,1155 E. 56th Street,Caucasi
 N/A,2018-06-16T15:38:00Z,Warning,Male,Lane Violation,6200 S. Cottage Grove,African American,Improper lane usage,No
 Two Citation Issued,2018-06-16T15:48:00Z,Citation,Female,Traffic Sign/Signal,1200 E. Woodlawn,African American,Disobeyed traffic control device,No
 N/A,2018-06-16T23:14:00Z,Warning,Male,Traffic Sign/Signal,5300 S. kiMBAEK,African American,Disobeyed redlight,No
-N/A,2018-06-17T02:57:00Z,Warning,Male,Disobeyed redlight,5225 S. Harper,African American,Disobeyed Stop Sign,No
+N/A,2018-06-17T02:57:00Z,Warning,Male,Traffic Sign/Signal,5225 S. Harper,African American,Disobeyed Stop Sign,No
 N/A,2018-06-17T22:08:00Z,Warning,Female,Equipment,5500 S. Dorchester,African American,No headlights when required,No
 N/A,2018-06-18T16:22:00Z,Warning,Male,Traffic Sign/Signal,5532 Dorchester,Hispanic,Ran stop sign,No
 N/A,2018-06-18T17:58:00Z,Warning,Female,Traffic Sign/Signal,6300 S. Greenwood,African American,Disobeyed traffic control device,No
 N/A,2018-06-18T21:13:00Z,Warning,Male,Traffic Sign/Signal,6100 S. Stony Island,African American,Ran stop sign,No
 N/A,2018-06-18T22:42:00Z,Warning,Female,Traffic Sign/Signal,5200 S. Lake Park,African American,Ran stop sign,No
-N/A,2018-06-18T23:16:00Z,Warning,Male,seatbelt,5500 S. Ellis,African American,Seatbelt violation,No
+N/A,2018-06-18T23:16:00Z,Warning,Male,Equipment,5500 S. Ellis,African American,Seatbelt violation,No
 N/A,2018-06-19T19:35:00Z,Warning,Male,Traffic Sign/Signal,5600 S. Lake Park,African American,Ran stop sign,No
 N/A,2018-06-19T20:09:00Z,Warning,Male,Traffic Sign/Signal,5600 S. Woodlawn,Hispanic,Ran stop sign,No
 One citation issued,2018-06-19T21:07:00Z,Citation,Female,Traffic Sign/Signal,5500 S. Lake Park,African American,Ran stop sign,No
 N/A,2018-06-19T22:02:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Stony Island,African American,Ran stop sign,No
 N/A,2018-06-19T22:37:00Z,Warning,Male,Equipment,5300 S. Woodlawn,African American,Unsafe equipment,No
 N/A,2018-06-20T16:13:00Z,Warning,Male,Lane Violation,58th and Dorchester,Asian,Wrong way on one way road,No
-N/A,2018-06-20T17:29:00Z,Warning,Female,seatbelt,55th and Dorchester,Hispanic,Child passenger no seat belt,No
+N/A,2018-06-20T17:29:00Z,Warning,Female,Equipment,55th and Dorchester,Hispanic,Child passenger no seat belt,No
 N/A,2018-06-22T17:08:00Z,Warning,Male,Traffic Sign/Signal,5724 S. Kimbark,Hispanic,Disobeyed Stop Sign,No
 N/A,2018-06-22T17:41:00Z,Warning,Male,Traffic Sign/Signal,1316 E. 53rd Street,African American,Disobeyed redlight,No
 N/A,2018-06-22T20:44:00Z,Warning,Male,Equipment,1357 E. 51st Street,African American,Operating unsafe equipment in high pedestrain area,No
@@ -1869,7 +1869,7 @@ N/A,2018-06-28T08:11:00Z,Warning,Male,Equipment,5900 S. Blackstone Ave.,African 
 N/A,2018-06-28T11:00:00Z,Warning,Female,Traffic Sign/Signal,1461 E. 51st Street,African American,Stop Sign violation,No
 N/A,2018-06-28T11:22:00Z,Warning,Male,moving violation,5800 S. Dorchester Ave,African American,Use of electronic device,No
 N/A,2018-06-28T03:31:00Z,Warning,Male,Lane Violation,5700 S. Stony Island Ave,African American,Improper Turn,No
-N/A,2018-06-28T19:07:00Z,Warning,Male,seatbelt,5300 S. Hyde Park Blvd,African American,No seatbelt when required,No
+N/A,2018-06-28T19:07:00Z,Warning,Male,Equipment,5300 S. Hyde Park Blvd,African American,No seatbelt when required,No
 N/A,2018-06-28T19:57:00Z,Warning,Male,Traffic Sign/Signal,5300 S. University,Caucasian,Ran red light,No
 Two citations issued,2018-06-30T02:09:00Z,Citation,Female,license plate/registration,5810 S Woodlawn,African American,Missing front plate,No
 N/A,2018-06-30T10:01:00Z,Warning,Male,Traffic Sign/Signal,5300 S Ellis,African American,Ran stop sign,No
@@ -1954,7 +1954,7 @@ N/A,2018-07-13T23:45:00Z,Warning,Male,Traffic Sign/Signal,E/B MDW Plaisance & Do
 N/A,2018-07-14T15:28:00Z,Warning,Female,Traffic Sign/Signal,6000 S Kenwood,African American,Disobeyed Stop Sign,No
 N/A,2018-07-14T19:07:00Z,Warning,Male,Traffic Sign/Signal,5641 S Woodlawn,African American,Red light violation,No
 N/A,2018-07-15T01:21:00Z,Warning,Female,Lane Violation,5600 S Lake Park,Hispanic,Wrong way,No
-N/A,2018-07-15T01:56:00Z,Warning,Male,follow too close,6330 S University,African American,Following too close,No
+N/A,2018-07-15T01:56:00Z,Warning,Male,moving violation,6330 S University,African American,Following too close,No
 N/A,2018-07-16T12:09:00Z,Warning,Female,moving violation,5700 Stony,Caucasian,Cell Phone violation,No
 N/A,2018-07-16T12:41:00Z,Warning,Male,Traffic Sign/Signal,1174 E 57th,Caucasian,Disobeyed traffic control device,No
 N/A,2018-07-16T18:58:00Z,Warning,Male,Lane Violation,860 E. 59th St.,Caucasian,Improper lane usage,No
@@ -2060,7 +2060,7 @@ N/A,2018-08-08T11:23:00Z,Warning,Female,Traffic Sign/Signal,4900 S. Drexel,Afric
 N/A,2018-08-08T14:28:00Z,Warning,Female,Lane Violation,5100 S. Blackstone,African American,Driving wrong way one way street,No
 N/A,2018-08-08T16:47:00Z,Warning,Male,Traffic Sign/Signal,5200 S. Dorchester,Hispanic,Disobeyed red light,No
 N/A,2018-08-08T18:11:00Z,Warning,Female,Lane Violation,5100 Lake Park,African American,Improper  U-Turn,No
-N/A,2018-08-09T15:16:00Z,Warning,Female,seatbelt,5428 Lake Park,African American,Child under 8 y/o seatbelt violation,No
+N/A,2018-08-09T15:16:00Z,Warning,Female,Equipment,5428 Lake Park,African American,Child under 8 y/o seatbelt violation,No
 N/A,2018-08-09T23:04:00Z,Warning,Male,Traffic Sign/Signal,930 E 53rd St,Asian,Disobeyed Stop Sign,No
 One citation issued,2018-08-11T01:46:00Z,Citation,Male,Traffic Sign/Signal,5300 S Woodlawn,African American,Stop sign violation,No
 N/A,2018-08-11T09:37:00Z,Warning,Female,Traffic Sign/Signal,6300 S. Cottage Grove,African American,"Improper left turn, with signs
@@ -2154,7 +2154,7 @@ N/A,2018-08-31T15:45:00Z,Warning,Male,Traffic Sign/Signal,740 E. 43rd Street,Afr
 N/A,2018-08-31T17:15:00Z,Warning,Male,Lane Violation,5600 S. Cottage Grove,African American,Improper lane usage,No
 N/A,2018-08-31T22:12:00Z,Warning,Male,Lane Violation,5500 S. University,Hispanic,Illegal U-Turn,No
 N/A,2018-08-31T23:08:00Z,Warning,Male,moving violation,5500 S. Cottage Grove,African American,Using a Cell Phone,No
-N/A,2018-09-01T15:48:00Z,Warning,Male,seatbelt,1616 E.56th Street,Caucasian,Failure to wear seat belt,No
+N/A,2018-09-01T15:48:00Z,Warning,Male,Equipment,1616 E.56th Street,Caucasian,Failure to wear seat belt,No
 N/A,2018-09-01T18:03:00Z,Warning,Female,Traffic Sign/Signal,5200 S. Kenwood,Asian,Disobeyed redlight,No
 Two Citations issued,2018-09-01T18:43:00Z,Citation,Male,Traffic Sign/Signal,5400 S. Woodlawn,African American,Disobeyed redlight,No
 N/A,2018-09-01T18:48:00Z,Warning,Male,moving violation,5700 S. Lake Park,Asian,Wrong way on one way street,No
@@ -2177,7 +2177,7 @@ N/A,2018-09-03T21:24:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Greenwood,Afri
 N/A,2018-09-03T21:37:00Z,Warning,Male,Traffic Sign/Signal,5600 S. Stony Island,African American,Disobeyed Stop Sign,No
 N/A,2018-09-04T12:43:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Kimbark,Caucasian,Disobeyed traffic control device,No
 N/A,2018-09-04T19:03:00Z,Warning,Male,Lane Violation,5500 S. Ellis,Caucasian,Improper lane usage,No
-One Citation Issued,2018-09-05T10:29:00Z,Citation,Female,seatbelt,5200 S. Lake Park,African American,No Seatbelt for child,No
+One Citation Issued,2018-09-05T10:29:00Z,Citation,Female,Equipment,5200 S. Lake Park,African American,No Seatbelt for child,No
 N/A,2015-09-05T20:23:00Z,Warning,Male,Traffic Sign/Signal,5000 S. Ellis,African American,Disobeyed Stop Sign,No
 N/A,2018-09-05T20:45:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Kimbark,Hispanic,Disobeyed Stop Sign,No
 N/A,2018-09-05T20:48:00Z,Warning,Male,Lane Violation,5500 S. Cottage Grove,African American,Improper lane usage,No
@@ -2255,7 +2255,7 @@ Two Citations issued,2018-09-20T16:16:00Z,Citation,Male,moving violation,5500 S.
 N/A,2018-09-20T21:16:00Z,Warning,Male,Traffic Sign/Signal,5600 S. Woodlawn,African American,Disobeyed Stop Sign,No
 N/A,2018-09-21T22:19:00Z,Warning,Male,Traffic Sign/Signal,6000 S. Woodlawn,African American,Disobeyed Stop Sign,No
 N/A,2018-09-22T14:27:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Cottage Grove,Caucasian,Disobeyed traffic control device,No
-N/A,2018-09-22T23:01:00Z,Warning,Female,follow too close,1648 E. 53rd Street,African American,Failure to leave sufficient space for overtaking/passing vehicles,No
+N/A,2018-09-22T23:01:00Z,Warning,Female,moving violation,1648 E. 53rd Street,African American,Failure to leave sufficient space for overtaking/passing vehicles,No
 Three citations issued,2018-09-23T09:36:00Z,Citation,Female,Equipment,5300 S. Greenwood,African American,No rear brake lights or tail lights,No
 N/A,2018-09-23T20:39:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Lake Park,African American,Disobeyed redlight,No
 N/A,2018-09-23T20:43:00Z,Warning,Male,moving violation,4919 S. Dorchester,Asian,Wrong way on one way street,No
@@ -2528,7 +2528,7 @@ driving",No
 N/A,2018-11-28T22:42:00Z,Warning,Male,Traffic Sign/Signal,5300 University,African American,Failed to stop at light,No
 N/A,2018-11-28T23:00:00Z,Warning,Female,Traffic Sign/Signal,5900 Woodlawn,African American,Failed to stop at sign,No
 N/A,2018-11-29T09:15:00Z,Warning,Male,Traffic Sign/Signal,6100 S. Cottage Grove,African American,Disobeyed Stop Sign,No
-Two Citations issued,2018-11-29T09:16:00Z,Citation,Male,seatbelt,5528 S Hyde Park,African American,No seatbelt when required,No
+Two Citations issued,2018-11-29T09:16:00Z,Citation,Male,Equipment,5528 S Hyde Park,African American,No seatbelt when required,No
 N/A,2018-11-29T12:15:00Z,Warning,Male,Traffic Sign/Signal,5402 S. Hyde Park,African American,Disobey traffic control device,No
 N/A,2018-11-29T19:52:00Z,Warning,Male,Traffic Sign/Signal,5700 University,Asian,Failed to stop at sign,No
 N/A,2018-11-29T21:57:00Z,Warning,Male,Traffic Sign/Signal,5100 Woodlawn,Asian,Failed to stop at sign,No
@@ -2956,7 +2956,7 @@ N/A,2019-03-16T20:53:00Z,Warning,Male,moving violation,5500 Lake Park,African Am
 N/A,2019-03-16T21:36:00Z,Warning,Female,Lane Violation,1400 Midway Plaisance,African American,Wrong way on a one way,No
 N/A,2019-03-16T22:22:00Z,Warning,Male,Traffic Sign/Signal,5500 Blackstone,African American,Failed to stop at light,Yes
 N/A,2019-03-16T23:46:00Z,Warning,Female,Lane Violation,950 Midway Plaisance,African American,Wrong way on a one way,No
-N/A,2019-03-17T00:27:00Z,Warning,Male,seatbelt,5500 Blackstone,African American,No Seat Belt,No
+N/A,2019-03-17T00:27:00Z,Warning,Male,Equipment,5500 Blackstone,African American,No Seat Belt,No
 N/A,2019-03-17T01:22:00Z,Warning,Female,Traffic Sign/Signal,1200 Midway Plaisance,Caucasian,Failed to stop at sign,No
 Two Citations issued,2019-03-17T09:16:00Z,Citation,Male,Traffic Sign/Signal,6100 Stony Island,African American,disobey redlight,No
 N/A,2019-03-17T14:55:00Z,Warning,Female,moving violation,6100 Ingleside,African American,driving down one-way,No
@@ -3011,7 +3011,7 @@ N/A,2019-04-01T16:31:00Z,Warning,Female,Traffic Sign/Signal,5453 S. Hyde Park,Ca
 N/A,2019-04-01T18:19:00Z,Warning,Female,Lane Violation,5700 S University,African American,Wrong way down one-way,No
 N/A,2019-04-02T12:49:00Z,Warning,Female,Traffic Sign/Signal,5350 S Lake Park,African American,Disobeyed stop sign,No
 N/A,2019-04-03T14:55:00Z,Warning,Male,Traffic Sign/Signal,5531 S Woodlawn,African American,Disobeyed stop sign,No
-N/A,2019-04-03T15:06:00Z,Warning,Female,seatbelt,5548 S Hyde Park Blvd,African American,No Seat Belt,No
+N/A,2019-04-03T15:06:00Z,Warning,Female,Equipment,5548 S Hyde Park Blvd,African American,No Seat Belt,No
 N/A,2019-04-03T16:21:00Z,Warning,Male,Traffic Sign/Signal,5629 S University,Caucasian,Disobeyed stop sign,No
 N/A,2019-04-04T10:43:00Z,Warning,Male,Traffic Sign/Signal,1438 E. 55th ST.,African American,disobey red light,No
 N/A,2019-04-04T11:02:00Z,Warning,Female,Traffic Sign/Signal,5100 S. Drexel,Caucasian,disobey red light,No
@@ -3501,7 +3501,7 @@ N/A,2019-08-01T23:38:00Z,Warning,Male,Traffic Sign/Signal,5500 Ellis,African Ame
 0,2019-08-05T01:31:00Z,Warning,Male,Lane Violation,Dorchester & Midway,African American,Wrong way on a one way,No
 N/A,2019-08-05T21:05:00Z,Warning,Female,Traffic Sign/Signal,6100 S Kenwood,African American,Stop Sign Violation,No
 N/A,2019-08-05T21:10:00Z,Warning,Male,Traffic Sign/Signal,5500 S Lake Park,African American,Stop Sign Violation,No
-N/A,2019-08-05T23:02:00Z,Warning,Male,follow too close,5300 S Dorchester,African American,Follow too close,No
+N/A,2019-08-05T23:02:00Z,Warning,Male,moving violation,5300 S Dorchester,African American,Follow too close,No
 N/A,2019-08-06T15:25:00Z,Warning,Male,Traffic Sign/Signal,5500 S Lake Shore,Hispanic,Disobeyed Stop Sign,No
 N/A,2019-08-06T20:15:00Z,Warning,Male,license plate/registration,6000 S Woodlawn,African American,No license plates,No
 N/A,2019-08-06T20:35:00Z,Warning,Male,license plate/registration,W/B Midway Plaisance & Cottage Grove,African American,No license plates,No
@@ -3541,7 +3541,7 @@ N/A,2019-08-11T22:03:00Z,Warning,Female,Lane Violation,5500 S. Lake Park,African
 N/A,2019-08-11T22:38:00Z,Warning,Male,Traffic Sign/Signal,6300 S. Drexel,African American,Red Light Violation,No
 N/A,2019-08-11T23:59:00Z,Warning,Male,Traffic Sign/Signal,6300 S. Drexel,African American,Red Light Violation,No
 One Citation Issued,2019-08-11T23:40:00Z,Citation,Male,Lane Violation,5700 S. Everett,African American,No Turn Signal,Yes
-N/A,2019-08-12T09:37:00Z,Warning,Female,seatbelt,1441 E.53rd Street,Caucasian,No Seatbelt,No
+N/A,2019-08-12T09:37:00Z,Warning,Female,Equipment,1441 E.53rd Street,Caucasian,No Seatbelt,No
 Two Citation Issued,2019-08-12T09:52:00Z,Citation,Male,moving violation,5300 S. Dorchester,African American,Cell phone violation,No
 One Citation Issued,2019-08-12T11:58:00Z,Citation,Female,moving violation,5300 S. Greenwood,African American,Cell phone violation,No
 N/A,2019-08-12T13:39:00Z,Warning,Male,Lane Violation,5311 S. University,Caucasian,Wrong way on one way street,No
@@ -3567,7 +3567,7 @@ N/A,2019-08-14T21:01:00Z,Warning,Male,Equipment,5700 S. Stony Island,African Ame
 N/A,2019-08-14T21:47:00Z,Warning,Female,Equipment,800 E. 53rd Street,African American,No headlights when required,No
 N/A,2019-08-14T22:54:00Z,Warning,Female,Traffic Sign/Signal,5900 S. Ellis,African American,Disobeyed Stop Sign,No
 N/A,2019-08-15T14:13:00Z,Warning,Female,Traffic Sign/Signal,1354 E. 55th Place,African American,Disobeyed Stop Sign,No
-N/A,2019-08-15T17:19:00Z,Warning,Male,seatbelt,5400 S.Woodlawn,African American,No Seatbelt,No
+N/A,2019-08-15T17:19:00Z,Warning,Male,Equipment,5400 S.Woodlawn,African American,No Seatbelt,No
 N/A,2019-08-15T19:32:00Z,Warning,Male,Equipment,6000 S. Dorchester,African American,Failure to Signal,No
 0,2019-08-16T07:39:00Z,Warning,Male,moving violation,5325 S DORCHESTER,Caucasian,STOP SIGN,No
 0,2019-08-16T16:26:00Z,Warning,Male,moving violation,5699 S LAKE PARK,African American,STOP SIGN,No
@@ -3587,7 +3587,7 @@ N/A,2019-08-19T20:48:00Z,Warning,Male,Equipment,5500 S. Greenwood,African Americ
 N/A,2019-08-19T21:10:00Z,Warning,Female,Equipment,5300 S. Greenwood,African American,Failure to Signal,No
 N/A,2019-08-19T23:12:00Z,Warning,Male,Equipment,5252 S. Hyde Park,African American,No headlights when required,No
 N/A,2019-08-20T16:09:00Z,Warning,Male,Traffic Sign/Signal,1001 E 59th Street,Asian,Improper lane usage,No
-N/A,2019-08-20T18:36:00Z,Warning,Male,seatbelt,5721 S Maryland,African American,Seat belt violation,Yes
+N/A,2019-08-20T18:36:00Z,Warning,Male,Equipment,5721 S Maryland,African American,Seat belt violation,Yes
 N/A,2019-08-20T20:02:00Z,Warning,Male,Lane Violation,6300 S Kenwood,African American,Wrong way on one way,No
 N/A,2019-08-20T22:52:00Z,Warning,Male,Traffic Sign/Signal,4937 S Woodlawn,African American,Stop Sign Violation,No
 N/A,2019-08-21T18:42:00Z,Warning,Male,Lane Violation,5500 S. Kimbark,African American,Improper turn signal,No
@@ -3596,7 +3596,7 @@ N/A,2019-08-22T09:11:00Z,Warning,Female,Traffic Sign/Signal,5300 S. University,A
 N/A,2019-08-22T09:16:00Z,Warning,Female,moving violation,6200 S. Woodlawn,African American,Improper  turn,No
 Two Citation Issued,2019-08-22T11:59:00Z,Citation,Female,Traffic Sign/Signal,6100 S. Drexel,African American,Disobeyed Stop Sign,No
 N/A,2019-08-22T16:40:00Z,Warning,Male,Traffic Sign/Signal,6100 S. Cottage Grove,African American,Disobeyed Stop Sign,No
-N/A,2019-08-22T17:11:00Z,Warning,Male,seatbelt,6137 S. Woodlawn,Caucasian,No Seatbelt,No
+N/A,2019-08-22T17:11:00Z,Warning,Male,Equipment,6137 S. Woodlawn,Caucasian,No Seatbelt,No
 N/A,2019-08-22T20:00:00Z,Warning,Female,Lane Violation,4900 S. Kimbark,African American,Improper overtake of a lane,No
 N/A,2019-08-22T21:44:00Z,Warning,Female,Traffic Sign/Signal,5200 S. Woodlawn,African American,Disobeyed traffic control device,No
 N/A,2019-08-22T22:16:00Z,Warning,Female,Equipment,5200 S. Cottage Grove,African American,Taillight not functioning,No
@@ -3717,7 +3717,7 @@ One Citation Issued,2019-09-15T21:19:00Z,Citation,Male,Traffic Sign/Signal,6050 
 N/A,2019-09-15T21:46:00Z,Warning,Female,Traffic Sign/Signal,4900 S. Drexel,African American,Disobeyed Stop Sign,No
 N/A,2019-09-16T09:33:00Z,Warning,Male,Traffic Sign/Signal,5100 S. Blackstone,African American,Disobeyed traffic control device,No
 N/A,2019-09-16T12:19:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Kimbark,African American,Disobeyed traffic control device,No
-N/A,2019-09-16T15:41:00Z,Warning,Female,seatbelt,5405 S. Drexel,African American,"Failure to Properly Secure Child in
+N/A,2019-09-16T15:41:00Z,Warning,Female,Equipment,5405 S. Drexel,African American,"Failure to Properly Secure Child in
 Approved Child Restraint System
 or Seat Belts",No
 N/A,2019-09-16T15:51:00Z,Warning,Female,Lane Violation,5480 S. Kenwood,African American,"Failure to Yield to Pedestrian in
@@ -3780,7 +3780,7 @@ N/A,2019-09-30T07:35:00Z,Warning,Female,Traffic Sign/Signal,800 E. Midway Plaisa
 Crosswalk",No
 N/A,2019-09-30T14:56:00Z,Warning,Male,Traffic Sign/Signal,1200 E. Midway Plaisance,African American,"Failure to Yield to Pedestrian in
 Crosswalk",No
-N/A,2019-09-30T16:36:00Z,Warning,Female,seatbelt,5467 S. University,African American,"Failure to Properly Secure Child in
+N/A,2019-09-30T16:36:00Z,Warning,Female,Equipment,5467 S. University,African American,"Failure to Properly Secure Child in
 Approved Child Restraint System
 or Seat Belts",No
 N/A,2019-09-30T20:37:00Z,Warning,Female,Lane Violation,5800 S. Stony Island,African American,No Turn Signal,No
@@ -3852,7 +3852,7 @@ N/A,2019-10-10T10:36:00Z,Warning,Female,Lane Violation,820 E. 55th Street,Caucas
 Crosswalk",No
 N/A,2019-10-10T13:28:00Z,Warning,Male,Lane Violation,5500 S. Woodlawn,African American,"Failure to Yield to Pedestrian in
 Crosswalk",No
-N/A,2019-10-10T17:48:00Z,Warning,Male,seatbelt,5200 S. Drexel,African American,Seat Belt Violation,No
+N/A,2019-10-10T17:48:00Z,Warning,Male,Equipment,5200 S. Drexel,African American,Seat Belt Violation,No
 N/A,2019-10-10T18:26:00Z,Warning,Male,Lane Violation,5500 S. Woodlawn,Caucasian,"Failure to Yield to Pedestrian in
 Crosswalk",No
 N/A,2019-10-10T21:36:00Z,Warning,Male,moving violation,5048 S. Cornell,African American,Wrong way on one way street,No
@@ -3916,7 +3916,7 @@ Crosswalk",No
 N/A,2019-10-23T22:30:00Z,Warning,Male,moving violation,5700 S. Dorchester,African American,Obstructing Traffic,No
 N/A,2019-10-24T05:16:00Z,Warning,Male,Traffic Sign/Signal,1611 E. 55th Street,African American,Disobeyed Stop Sign,No
 N/A,2019-10-24T11:20:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Cottage Grove,African American,Disobeyed traffic control device,No
-N/A,2019-10-24T14:21:00Z,Warning,Female,seatbelt,5402 S. Woodlawn,African American,Child not Secured,No
+N/A,2019-10-24T14:21:00Z,Warning,Female,Equipment,5402 S. Woodlawn,African American,Child not Secured,No
 N/A,2019-10-24T20:55:00Z,Warning,Male,moving violation,1205 E. 56th Street,Caucasian,Wrong way on one way street,No
 N/A,2019-10-24T23:27:00Z,Warning,Male,Traffic Sign/Signal,1350 E. 55th Street,African American,Red Light Violation,No
 One Citation Issued,2019-10-26T18:23:00Z,Citation,Male,moving violation,5500 S. University,Caucasian,Too fast for conditions,No
@@ -3942,3 +3942,114 @@ N/A,2019-10-30T21:57:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Woodlawn,Cauca
 N/A,2019-10-31T17:44:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Harper,African American,Red Light Violation,No
 N/A,2019-10-31T17:47:00Z,Warning,Female,Equipment,5600 S. Blackstone,Caucasian,No Headlights when Required,No
 N/A,2019-10-31T21:42:00Z,Warning,Male,Lane Violation,5800 S. Kenwood,Hispanic,Wrong way on one way street,No
+N/A,2019-11-01T14:49:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Berkley,African American,Disobeyed Stop Sign,No
+N/A,2019-11-01T19:24:00Z,Warning,Male,Traffic Sign/Signal,5900 S. Woodlawn,African American,Disobeyed Stop Sign,No
+N/A,2019-11-01T20:37:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Blackstone,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-11-02T02:34:00Z,Warning,Male,Lane Violation,5150 S. Cornell,African American,Wrong way on one way street,No
+N/A,2019-11-03T01:48:00Z,Warning,Male,Lane Violation,6100 S. Dorchester,African American,Improper Passing,No
+N/A,2019-11-03T10:36:00Z,Warning,Female,Traffic Sign/Signal,5500 S. Greenwood,Caucasian,Disobeyed traffic control device,No
+N/A,2019-11-03T16:01:00Z,Warning,Female,speed,1400 E. Midway Plaisance,African American,Speeding,No
+N/A,2019-11-03T16:52:00Z,Warning,Male,Lane Violation,5100 S. Cottage Grove,African American,Improper Lane Usage,No
+N/A,2019-11-03T20:58:00Z,Warning,Male,Lane Violation,5500 S. Kimbark,African American,Improper Overtaking,No
+N/A,2019-11-03T23:12:00Z,Warning,Female,Lane Violation,5050 S. Cornell,African American,Wrong way on one way street,No
+One Citation Issued,2019-11-04T12:46:00Z,Citation,Female,Traffic Sign/Signal,5115 S. Woodlawn,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-11-04T15:33:00Z,Warning,Male,Traffic Sign/Signal,1226 E. 53rd Street,African American,Disobeyed Stop Sign,No
+N/A,2019-11-04T22:02:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Woodlawn,Caucasian,Disobeyed traffic control device,No
+N/A,2019-11-05T11:20:00Z,Warning,Female,Traffic Sign/Signal,5508 S. Lake Park,African American,Disobeyed traffic control device,No
+Two Citations Issued,2019-11-06T22:45:00Z,Citation,Female,Equipment,5600 S. Woodlawn,African American,No Headlights when Required,No
+N/A,2019-11-07T12:02:00Z,Warning,Male,Traffic Sign/Signal,4830 S. Ellis,African American,Disobeyed Stop Sign,No
+N/A,2019-11-09T08:13:00Z,Warning,Female,moving violation,5700 S. Lake Park,Caucasian,Wrong way on one way street,No
+N/A,2019-11-09T08:42:00Z,Warning,Male,moving violation,5700 S. Lake Park,African American,Wrong way on one way street,No
+Two Citations Issued,2019-11-10T15:31:00Z,Citation,Male,Traffic Sign/Signal,5500 S. Everett,African American,Disobeyed Stop Sign,No
+N/A,2019-11-11T20:20:00Z,Warning,Female,Lane Violation,5800 S. Ellis,Caucasian,Lane Violation,No
+N/A,2019-11-11T10:05:00Z,Warning,Male,Traffic Sign/Signal,1000 E. Midway Plaisance,African American,Disobeyed Stop Sign,No
+N/A,2019-11-11T13:09:00Z,Warning,Male,Lane Violation,5100 S. Woodlawn,Caucasian,Improper Lane Usage,No
+N/A,2019-11-13T23:15:00Z,Warning,Female,Equipment,1554 E. 54th Street,African American,No Headlights when Required,No
+N/A,2019-11-13T23:25:00Z,Warning,Male,Traffic Sign/Signal,5400 S. Hyde Park,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-11-13T23:31:00Z,Warning,Male,Traffic Sign/Signal,5700 S blackstone,Caucasian,Disobeyed Stop Sign,No
+Two Citations Issued,2019-11-14T11:38:00Z,Citation,Female,moving violation,6300 S. Greenwood,African American,Wrong way on one way street,No
+One Citation Issued,2019-11-14T20:56:00Z,Citation,Female,Lane Violation,5200 S. Woodlawn,African American,Improper U- Turn,No
+N/A,2019-11-15T08:56:00Z,Warning,Male,Lane Violation,900 E. Midway Plaisance,Hispanic,Improper Lane Usage,No
+N/A,2019-11-15T09:34:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Kimbark,African American,Disobeyed traffic control device,No
+N/A,2019-11-15T15:54:00Z,Warning,Female,Lane Violation,5500 S. Kimbark,African American,"Failure to Yield to Pedestrian in
+Crosswalk",No
+N/A,2019-11-15T16:56:00Z,Warning,Female,Lane Violation,5200 S. University,Caucasian,Improper Lane Usage,No
+N/A,2019-11-15T20:54:00Z,Warning,Female,Lane Violation,54th &  Ellis,African American,Wrong way on one way street,No
+N/A,2019-11-15T23:53:00Z,Warning,Female,Lane Violation,56th & Maryland,African American,Wrong way on one way street,No
+N/A,2019-11-16T09:37:00Z,Warning,Female,moving violation,5500 S. Woodlawn,African American,Failure to Yield to Emergency Vehicle,No
+N/A,2019-11-16T09:41:00Z,Warning,Female,moving violation,5500 S. Woodlawn,African American,Failure to Yield to Emergency Vehicle,No
+N/A,2019-11-16T09:54:00Z,Warning,Female,Traffic Sign/Signal,5800 S. Stony Island,Asian,Disobeyed traffic control device,No
+N/A,2019-11-16T11:16:00Z,Warning,Female,Traffic Sign/Signal,4940 S. Greenwood,African American,Disobeyed Stop Sign,No
+N/A,2019-11-16T20:47:00Z,Warning,Male,Lane Violation,1329 E. 53rd Street,African American,"Failure to Yield to Pedestrian in
+Crosswalk",No
+N/A,2019-11-18T21:43:00Z,Warning,Male,Traffic Sign/Signal,4900 S. Kimbark,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-11-20T15:33:00Z,Warning,Male,Lane Violation,5505 S. Woodlawn,African American,"Failure to Yield to Pedestrian in
+Crosswalk",No
+N/A,2019-11-20T15:56:00Z,Warning,Female,Lane Violation,1201 E. Midway Plaisance,Caucasian,"Failure to Yield to Pedestrian in
+Crosswalk",No
+N/A,2019-11-20T18:00:00Z,Warning,Male,Lane Violation,5200 S. Lake Park,African American,No Turn Signal,No
+N/A,2019-11-20T19:42:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Woodlawn,African American,Disobeyed Stop Sign,No
+Two Citations Issued,2019-11-20T20:39:00Z,Citation,Male,Traffic Sign/Signal,5500 S. Harper,African American,Disobeyed Stop Sign,Yes
+N/A,2019-11-20T21:52:00Z,Warning,Female,Lane Violation,5500 S. Greenwood,African American,No Turn Signal,No
+N/A,2019-11-21T12:37:00Z,Warning,Female,moving violation,5104 S. Woodlawn,African American,Failure to Yield-Turning Left,No
+N/A,2019-11-22T10:31:00Z,Warning,Male,Traffic Sign/Signal,5123 S. Woodlawn,African American,Disobeyed traffic control device,No
+N/A,2019-11-22T18:05:00Z,Warning,Male,Traffic Sign/Signal,1415 E. 57th Street,Caucasian,Disobeyed traffic control device,No
+One Citation Issued,2019-11-22T20:48:00Z,Citation,Male,Traffic Sign/Signal,5300 S. Woodlawn,African American,Disobeyed traffic control device,No
+N/A,2019-11-23T11:40:00Z,Warning,Female,moving violation,6300 S. Ellis,Caucasian,Wrong way on one way street,No
+N/A,2019-11-23T19:49:00Z,Warning,Male,Lane Violation,5400 S. Lake Park,African American,Improper lane usage,No
+N/A,2019-11-24T00:06:00Z,Warning,Male,Traffic Sign/Signal,5100 S. Dorchester,African American,Disobeyed Stop Sign,No
+N/A,2019-11-24T13:14:00Z,Warning,Male,license plate/registration,6337 S. Woodlawn,African American,Driving without plates on vehicle,No
+N/A,2019-11-24T17:06:00Z,Warning,Male,Equipment,1300 E. 56th Street,African American,Driving without headlights,No
+N/A,2019-11-25T15:07:00Z,Warning,Male,Traffic Sign/Signal,1321 E. 57th Street,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-11-25T17:34:00Z,Warning,Male,Traffic Sign/Signal,5300 S. University,Caucasian,Red Light Violation,No
+Two Citations Issued,2019-11-26T10:32:00Z,Citation,Female,Traffic Sign/Signal,5300 S. Woodlawn,African American,Disobeyed traffic control device,No
+N/A,2019-11-26T11:28:00Z,Warning,Male,Traffic Sign/Signal,5300 S. University,African American,Disobeyed traffic control device,No
+N/A,2019-11-26T11:58:00Z,Warning,Male,Traffic Sign/Signal,1207 E. 53rd Street,African American,Disobeyed traffic control device,No
+N/A,2019-11-26T15:31:00Z,Warning,Female,Traffic Sign/Signal,5300 S. University,African American,Disobeyed traffic control device,No
+N/A,2019-11-26T18:14:00Z,Warning,Female,moving violation,5700 S. Dorchester,African American,Wrong way on one way street,No
+N/A,2019-11-26T20:17:00Z,Warning,Female,Equipment,5700 S. Kimbark,Asian,No Headlights when Required,No
+N/A,2019-11-27T09:33:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Dorchester,African American,Disobeyed Stop Sign,No
+N/A,2019-11-27T11:03:00Z,Warning,Male,Traffic Sign/Signal,6100 S. Greenwood,Caucasian,Disobeyed Stop Sign,No
+One Citation Issued,2019-11-27T13:11:00Z,Citation,Female,moving violation,5100 S. Lake Park,Asian,Improper U- Turn,No
+N/A,2019-11-27T14:04:00Z,Warning,Female,Traffic Sign/Signal,4700 S. Wodlawn,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-11-27T14:09:00Z,Warning,Female,Traffic Sign/Signal,5100 S. Blackstone,Hispanic,Disobeyed Stop Sign,No
+One Citation Issued,2019-11-27T15:31:00Z,Citation,Male,moving violation,5500 S. Kimbark,African American,Driving while using cell phone,No
+One Citation Issued,2019-11-27T16:01:00Z,Citation,Female,moving violation,5300 S. Blackstone,Caucasian,Driving while using cell phone,No
+N/A,2019-11-27T16:24:00Z,Warning,Male,moving violation,5700 S. Blackstone,African American,Wrong way on one way street,No
+N/A,2019-11-27T16:30:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Harper,African American,Disobeyed red light,No
+Two Citations Issued,2019-11-27T17:00:00Z,Citation,Male,license plate/registration,6000 S. Dorchester,African American,"subject seen slopped over wheel, driver was suspended & no insurance",No
+N/A,2019-11-27T17:02:00Z,Warning,Male,speed,Midway Plaisance & Dorchester,African American,Speeding,No
+N/A,2019-11-27T20:36:00Z,Warning,Female,Traffic Sign/Signal,4900 S. Ellis,African American,Disobeyed Stop Sign,No
+N/A,2019-11-28T19:18:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Ellis,African American,Disobeyed Stop Sign,No
+N/A,2019-11-29T12:14:00Z,Warning,Male,Traffic Sign/Signal,Midway Plaisance & Stony Island,African American,Disobeyed traffic control device,No
+N/A,2019-11-29T18:56:00Z,Warning,Male,Traffic Sign/Signal,5200 S. Drexel,African American,Disobeyed Stop Sign,No
+N/A,2019-11-29T20:02:00Z,Warning,Male,Traffic Sign/Signal,5700 S. Harper,African American,Disobeyed Stop Sign,No
+N/A,2019-11-29T23:39:00Z,Warning,Male,Equipment,5100 S. Dorchester,African American,No Headlights when Required,No
+N/A,2019-12-01T02:27:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Harper,African American,Disobeyed Stop Sign,No
+N/A,2019-12-01T09:54:00Z,Warning,Female,Traffic Sign/Signal,5700 S. Stony Island,African American,Disobeyed Stop Sign,No
+N/A,2019-12-01T16:41:00Z,Warning,Female,Traffic Sign/Signal,5100 S. Drexel,African American,Disobeyed Stop Sign,No
+N/A,2019-12-01T16:43:00Z,Warning,Female,moving violation,5100 S. Blackstone,Hispanic,Wrong way on one way street,No
+N/A,2019-12-01T17:07:00Z,Warning,Female,Traffic Sign/Signal,5300 S. Kimbark,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-12-01T23:22:00Z,Warning,Male,Lane Violation,5700 S. Ellis,African American,No Turn Signal,No
+N/A,2019-12-02T20:46:00Z,Warning,Male,Traffic Sign/Signal,4700 S. Kimbark,Caucasian,Disobeyed Stop Sign,No
+N/A,2019-12-02T22:38:00Z,Warning,Female,Traffic Sign/Signal,4900 S. Ellis,African American,Disobeyed Stop Sign,No
+N/A,2019-12-03T09:18:00Z,Warning,Male,moving violation,5600 S. Cornell,Caucasian,Right Turn in Front of Bus,No
+N/A,2019-12-03T09:19:00Z,Warning,Female,moving violation,5500 S. Ellis,African American,Failure to Yield to Pedestrian,No
+One Citation Issued,2019-12-03T09:31:00Z,Citation,Male,moving violation,1411 E. 53rd Street,African American,Improper U- Turn,No
+N/A,2019-12-03T13:26:00Z,Warning,Male,moving violation,5300 S. Cornell,Caucasian,Improper U- Turn,No
+N/A,2019-12-03T16:05:00Z,Warning,Male,Lane Violation,5318 S. Blackstone,Caucasian,Improper Lane Usage,No
+N/A,2019-12-04T00:50:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Kimbark,African American,Disobeyed Stop Sign,No
+Two Citations Issued,2019-12-04T09:59:00Z,Citation,Female,moving violation,5201 S. Woodlawn,Caucasian,Electronic device while driving,No
+N/A,2019-12-04T15:45:00Z,Warning,Male,Traffic Sign/Signal,5111 S. Drexel,African American,Disobeyed Stop Sign,No
+Two Citations Issued,2019-12-04T18:06:00Z,Citation,Male,Equipment,1055 E. 55th Street,African American,No Headlights when Required,Yes
+N/A,2019-12-05T00:11:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Greenwood,African American,Disobeyed Stop Sign,No
+N/A,2019-12-05T00:44:00Z,Warning,Male,Traffic Sign/Signal,5300 S. Greenwood,African American,Red Light Violation,No
+N/A,2019-12-05T11:26:00Z,Warning,Female,moving violation,1303 E. 53rd Street,Caucasian,Electronic device while driving,No
+N/A,2019-12-05T13:37:00Z,Warning,Female,moving violation,5521 S. University,African American,Failure to Yield to Pedestrian,No
+N/A,2019-12-05T21:38:00Z,Warning,Female,Equipment,5656 S. Lake Park,Caucasian,No Headlights when Required,No
+N/A,2019-12-05T22:24:00Z,Warning,Female,Traffic Sign/Signal,5600 S. Woodlawn,African American,Disobeyed Stop Sign,No
+N/A,2019-12-05T23:43:00Z,Warning,Female,Lane Violation,5300 S. Hyde Park Blvd.,Hispanic,Improper Overtaking,No
+N/A,2019-12-06T00:55:00Z,Warning,Male,Traffic Sign/Signal,5500 S. Cornell,African American,Disobeyed Stop Sign,No
+N/A,2019-12-06T09:34:00Z,Warning,Male,Lane Violation,5300 S. Kenwood,African American,Improper Overtaking,No
+Two Citations Issued,2019-12-06T10:15:00Z,Citation,Female,Traffic Sign/Signal,1121 E. 54th Street,African American,Disobeyed Stop Sign,No
+N/A,2019-12-06T16:52:00Z,Warning,Female,Traffic Sign/Signal,5500 S. Dorchester,African American,Disobeyed Stop Sign,No

@@ -1,0 +1,111 @@
+---
+title: "Appendix 1: University of Chicago Police Department Open Data Analysis"
+output: pdf_document
+---
+
+```{r initial_setup, include=FALSE}
+library(tidyverse)
+library(lubridate)
+library(kableExtra)
+library(scales)
+
+knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
+
+
+traffic <- read_csv("files/traffic_cleaned.csv")
+traffic <- traffic %>% mutate(year = year(Date),
+                              month = month(Date),
+                              year_month = str_c(year, month)) %>%
+  filter(between(year, 2015, 2019))
+
+interview <- read_csv("files/interview_cleaned.csv")
+interview <- interview %>% mutate(year = year(Date),
+                              month = month(Date),
+                              year_month = str_c(year, month)) %>%
+  filter(between(year, 2015, 2019))
+
+incident <- read_csv("files/incident_cleaned.csv")
+incident <- incident %>% mutate(year = year(Occured),
+                              month = month(Occured),
+                              year_month = str_c(year, month)) %>%
+  filter(between(year, 2015, 2019))
+
+traffic <- traffic %>% mutate(is_black = ifelse(Race == "African American", 1, 0))
+interview <- interview %>% mutate(is_black = ifelse(Race == "African American", 1, 0))
+```
+
+# Introduction
+
+UCPD releases three types of data on their data page. This data is not directly downloadable and was web scraped into a database which was then standardized. The three types of data include *[The Daily Incident Report](https://incidentreports.uchicago.edu/)*, which includes crimes and fires reported to UCPD in its patrol area, *[Traffic Stops](https://incidentreports.uchicago.edu/trafficStops.php)*, and *[Field Interviews](https://incidentreports.uchicago.edu/fieldInterviews.php)*.
+
+Note that 2019 numbers are through December 6, 2019.
+
+## Number of interactions with UCPD by Year
+```{r}
+kable(traffic %>% group_by(year) %>% 
+        summarize(Total = n(), `% African American` = percent(sum(is_black) / n(), .1)), 
+      caption="Traffic Stops", position="H")
+kable(incident %>% group_by(year) %>% 
+        summarize(Total = n()), caption="Incidents", position="H")
+kable(interview %>% group_by(year) %>% summarize(Total = n(), `% African American` = percent(sum(is_black) / n(), .1)), 
+      caption="Interviews", position="H")
+```
+
+## Traffic Outcomes
+
+```{r}
+kable(traffic %>% group_by(year, Disposition) %>% 
+  summarize(Total = n()) %>% 
+  pivot_wider(names_from = c("Disposition"), values_from = Total) %>%
+  mutate(Arrest = replace_na(Arrest, 0)), caption="Traffic Outcomes", position="H")
+
+mini_traffic <- traffic %>% filter(Disposition != "Arrest", Race != "NHPI or Indian", `IDOT Classification` != "Other")
+
+race_cnts <- mini_traffic %>% group_by(Race) %>% summarize(`Total (by Race)` = n())
+
+dis_race <- mini_traffic %>% group_by(Disposition, Race) %>% 
+        summarize(Total = n()) %>% left_join(race_cnts) %>%
+  mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1))
+
+search_race <- mini_traffic %>% group_by(Search, Race) %>% 
+        summarize(Total = n()) %>% left_join(race_cnts) %>%
+  mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1))
+
+violation_race <- mini_traffic %>% group_by(`IDOT Classification`, Race) %>% 
+        summarize(Total = n()) %>% left_join(race_cnts) %>%
+  mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1)) %>% select(-Total, -`Total (by Race)`) %>% 
+  pivot_wider(names_from = c("Race"), values_from = `Share in Category`)
+
+kable(dis_race %>% select(-`Total (by Race)`), caption="Traffic Outcomes by Race", position="H")
+kable(search_race %>% select(-`Total (by Race)`), caption="Traffic Search Outcomes by Race", position="H")
+kable(violation_race, caption="Traffic Violation Outcomes by Race", position="H")
+```
+
+## Interview Outcomes
+```{r}
+mini_interview <- interview %>% filter(!is.na(Search), Race != "Hispanic")
+
+race_cnts_interview <- mini_interview %>% group_by(Race) %>% summarize(`Total (by Race)` = n())
+
+int_search_race <- 
+  mini_interview %>% group_by(Search, Race) %>% summarize(Total = n()) %>% 
+  left_join(race_cnts_interview) %>%
+  mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1))
+
+int_disp_race <- 
+  mini_interview %>% group_by(Disposition, Race) %>% summarize(Total = n()) %>% 
+  left_join(race_cnts_interview) %>%
+  mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1)) %>% select(-Total, -`Total (by Race)`) %>% 
+  pivot_wider(names_from = c("Race"), values_from = `Share in Category`) %>% mutate(Caucasian = replace_na(Caucasian, "0%"))
+kable(int_search_race %>% select(-`Total (by Race)`), caption="Interview Search Outcomes by Race", position="H")
+kable(int_disp_race, caption="Interview Disposition Outcomes by Race", position="H")
+```
+
+## Incident Outcomes
+```{r}
+library(ggplot2)
+incident$Month <- as.Date(cut(incident$Occured,
+  breaks = "month"))
+ggplot(incident %>% filter(year > 2015), aes(Month)) + geom_bar() + labs(y="Number of Incidents Per Month") + theme_minimal()
+```
+
