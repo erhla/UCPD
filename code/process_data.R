@@ -55,7 +55,17 @@ write_csv(traffic, "files/traffic_cleaned.csv")
 #incident
 incident <- read_csv("files/incident.csv")
 incident <- incident %>% 
-  mutate(Occured = mdy(gsub(" .*$", "", incident$Occured)))
+  mutate(Occured = mdy(gsub(" .*$", "", incident$Occured)),
+         Outcome = case_when(str_detect(tolower(Disposition), "arrest") ~ "arrested",
+                             str_detect(tolower(Disposition), "cpd") ~ "cpd",
+                             str_detect(tolower(Disposition), "open") ~ "open",
+                             str_detect(tolower(Disposition), "referred") ~ "referred",
+                             str_detect(tolower(Disposition), "unfounded") ~ "unfounded",
+                             str_detect(tolower(Disposition), "void") ~ "void",
+                             str_detect(tolower(Disposition), "cleared") ~ "cleared",
+                             str_detect(tolower(Disposition), "closed") ~ "closed",
+                             TRUE ~ "referred")
+         )
 
 write_csv(incident, "files/incident_cleaned.csv")
 

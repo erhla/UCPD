@@ -33,7 +33,7 @@ interview <- interview %>% mutate(Year = year(Date)) %>%
 
 incident <- read_csv("files/incident_cleaned.csv")
 incident <- incident %>% mutate(Year = year(Occured)) %>%
-  filter(between(Year, 2015, 2019))
+  filter(between(Year, 2015, 2019), Outcome != "void")
 
 traffic <- traffic %>% mutate(is_black = ifelse(Race == "African American", 1, 0))
 interview <- interview %>% mutate(is_black = ifelse(Race == "African American", 1, 0),
@@ -162,10 +162,15 @@ int_disp_race <-
   mutate(`Share in Category` = percent(Total / `Total (by Race)`, .1)) %>% select(-Total, -`Total (by Race)`) %>% 
   pivot_wider(names_from = c("Race"), values_from = `Share in Category`) %>% mutate(Caucasian = replace_na(Caucasian, "0%"))
 
-kable(int_search_race %>% select(-`Total (by Race)`), caption="Table 9: Interview Search Outcomes by Race") %>% 
+tbldata <- interview %>% group_by(`Initiated By`, Year) %>% count() %>% pivot_wider(names_from = "Year", values_from = "n")
+
+kable(tbldata, caption = "Table 9: Interview Initiated By") %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
-kable(int_disp_race, caption="Table 10: Interview Disposition Outcomes by Race") %>% 
+kable(int_search_race %>% select(-`Total (by Race)`), caption="Table 10: Interview Search Outcomes by Race") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+
+kable(int_disp_race, caption="Table 11: Interview Disposition Outcomes by Race") %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
 ggplot(interview %>% filter(Race != "other") %>% group_by(Race) %>% summarize(`Number of Searches` = sum(searched)), 
@@ -180,6 +185,22 @@ incident$Month <- as.Date(cut(incident$Occured,
   breaks = "month"))
 ggplot(incident %>% filter(Year > 2015), aes(Month)) + geom_bar() + 
   labs(y="Number of Incidents Per Month") + theme_minimal()
+
+outcome_by_year <- incident %>% group_by(Year) %>% count(Outcome)
+
+ggplot(outcome_by_year %>% filter(Outcome == "arrested"), aes(Year, n)) + geom_bar(position="dodge", stat="identity") + theme_minimal() + labs(y="Arrests per Year") +
+  theme(text = element_text(size=15))
+
+ggplot(outcome_by_year %>% filter(Outcome == "closed"), aes(Year, n)) + geom_bar(position="dodge", stat="identity") + theme_minimal() + labs(y="Closed per Year") +
+  theme(text = element_text(size=15))
+
+ggplot(outcome_by_year %>% filter(Outcome == "cpd" | Outcome == "referred"), aes(Year, n)) + geom_bar(position="dodge", stat="identity") + theme_minimal() + labs(y="Referred per Year") +
+  theme(text = element_text(size=15))
+
+kable(outcome_by_year %>% pivot_wider(names_from = "Outcome", values_from = "n"), caption="Table 12: Incident Outcomes by Year") %>% 
+  kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
+
+
 ```
 
 ## Gaps
@@ -204,14 +225,14 @@ kable(rslt %>% as.data.frame() %>%
   summarize(`Total Population` = sum(total_pop),
                    `Total White Population` = sum(white_pop),
                    `Total Black Population` = sum(black_pop)),
-  caption="Table 11: Population in Census Tracts which intersect UCPD Patrol Area") %>% 
+  caption="Table 13: Population in Census Tracts which intersect UCPD Patrol Area") %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
 weighted_est <- st_interpolate_aw(cook_pop[c('total_pop', 'white_pop', 'black_pop')], UCPD_area, extensive = TRUE)
 kable(weighted_est %>% as.data.frame() %>% summarize(`Total Population` = round(sum(total_pop)),
                    `Total White Population` = round(sum(white_pop)),
                    `Total Black Population` = round(sum(black_pop))),
-  caption="Table 12: Projected Population in UCPD Patrol Area") %>% 
+  caption="Table 14: Projected Population in UCPD Patrol Area") %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
 rslt <- rslt %>% mutate(share_non_white = (total_pop - white_pop) / total_pop)
