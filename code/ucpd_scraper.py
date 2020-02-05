@@ -76,8 +76,14 @@ def main(start_date, end_date, record_type, file_name):
     #ex) main('11/01/2019', '12/06/2019', 'incident', 'incident.csv')
     master_ls = process_date_range(start_date, end_date, record_type)
     df = pd.DataFrame(master_ls)
-    df.to_csv('C:/Users/erhla/Documents/GitHub/UCPD' + '/' + file_name)
+    df.to_csv('C:/Users/erhla/Documents/GitHub/UCPD/' + record_type + '/' + file_name)
     return df
     
+def run_all(start_date, end_date):
+    types = ['incident', 'interview', 'traffic']
+    file_name = start_date[0:2] + start_date[3:5] + start_date[6:10] + '_to_' + end_date[0:2] + end_date[3:5] + end_date[6:10] + '.csv'
+    for one_type in types:
+        main(start_date, end_date, one_type, file_name)
+        
 
 

@@ -66,6 +66,37 @@ incident <- incident %>%
                              str_detect(tolower(Disposition), "closed") ~ "closed",
                              TRUE ~ "referred")
          )
+incident <- incident %>% 
+  mutate(Date = case_when(str_detect(tolower(Date), "theft") ~ "Theft",
+                          str_detect(tolower(Date), "information") ~ "Information",
+                          str_detect(tolower(Date), "found") ~ "Found Property",
+                          str_detect(tolower(Date), "lost") ~ "Lost Property",
+                          str_detect(tolower(Date), "liquor") ~ "Liquor Law Violation",
+                          str_detect(tolower(Date), "medical") ~ "Medical",
+                          str_detect(tolower(Date), "mental") ~ "Mental Health",
+                          str_detect(tolower(Date), "battery") ~ "Battery",
+                          str_detect(tolower(Date), "injured") ~ "Injury",
+                          str_detect(tolower(Date), "traffic") ~ "Traffic Incident",
+                          str_detect(tolower(Date), "trespass") ~ "Trespass",
+                          str_detect(tolower(Date), "burglary") ~ "Burglary",
+                          str_detect(tolower(Date), "assault") ~ "Assault",
+                          str_detect(tolower(Date), "damage") ~ "Damage to Property",
+                          str_detect(tolower(Date), "robbery") ~ "Robbery",
+                          str_detect(tolower(Date), "weapon") ~ "Weapon Incident",
+                          str_detect(tolower(Date), "fire") ~ "Fire",
+                          str_detect(tolower(Date), "obstruct") ~ "Obstruction",
+                          str_detect(tolower(Date), "reck") ~ "Reckless Action",
+                          str_detect(tolower(Date), "suspic") ~ "Suspicious Action",
+                          str_detect(tolower(Date), "decept") ~ "Deceptive Practice",
+                          str_detect(tolower(Date), "assist") ~ "Assist Other Agency",
+                          str_detect(tolower(Date), "arrest") ~ "Arrest",
+                          str_detect(tolower(Date), "stalk") ~ "Stalking",
+                          str_detect(tolower(Date), "harass") ~ "Harassment",
+                          
+                          
+                          
+                          
+                                           TRUE ~ Date))
 
 write_csv(incident, "files/incident_cleaned.csv")
 

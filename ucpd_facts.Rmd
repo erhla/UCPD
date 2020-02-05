@@ -24,8 +24,7 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 
 #prepare data
 traffic <- read_csv("files/traffic_cleaned.csv")
-traffic <- traffic %>% mutate(Year = year(Date)) %>%
-  filter(between(Year, 2015, 2019))
+traffic <- traffic %>% mutate(Year = year(Date))
 
 interview <- read_csv("files/interview_cleaned.csv")
 interview <- interview %>% mutate(Year = year(Date)) %>%
@@ -34,10 +33,25 @@ interview <- interview %>% mutate(Year = year(Date)) %>%
 incident <- read_csv("files/incident_cleaned.csv")
 incident <- incident %>% mutate(Year = year(Occured)) %>%
   filter(between(Year, 2015, 2019), Outcome != "void")
+incident$Month <- as.Date(cut(incident$Occured,
+  breaks = "month"))
 
-traffic <- traffic %>% mutate(is_black = ifelse(Race == "African American", 1, 0))
+traffic <- traffic %>% mutate(is_black = ifelse(Race == "African American", 1, 0),
+                              month = as.Date(cut(Date, breaks = "month")),
+                              week = as.Date(cut(Date, breaks = "week")),
+                              searched = ifelse(Search == "Yes", 1, 0),
+                          cited = ifelse(Disposition == "Citation", 1, 0),
+                          searched_and_cited = ifelse(searched == 1 & cited == 1, 1, 0),
+                          searched_and_not_cited = ifelse(searched == 1 & cited == 0, 1, 0),
+                          warning = ifelse(Disposition == "Warning", 1, 0))
+
+traffic_full <- traffic
+traffic <- traffic %>%
+  filter(between(Year, 2015, 2019))
+
 interview <- interview %>% mutate(is_black = ifelse(Race == "African American", 1, 0),
                                   searched = ifelse(Search == "Yes", 1, 0))
+mini_traffic <- traffic %>% filter(Disposition != "Arrest", Race != "NHPI or Indian", `IDOT Classification` != "Other")
 
 #geospatial data
 UCPD_area <- st_read("files/Areas_UCPD/Areas.shp")
@@ -58,11 +72,102 @@ cook_pop <- cook_pop %>% rename(total_pop = B02001_001E,
 cook_pop <- st_transform(cook_pop, st_crs(UCPD_area))
 ```
 
+```{r fact_strs}
+fact_1 <- paste0(traffic %>% summarize(sum(is_black) / n()) %>% as.numeric() %>% percent(., .1), " of traffic stops and ", interview %>% summarize(sum(is_black) / n()) %>% as.numeric() %>% percent(., .1))
+
+cited_df <- mini_traffic %>% group_by(is_black) %>% summarize(sum(cited) / n())
+
+fact_2 <- paste0(percent(as.numeric(cited_df[2,2]), .1), " vs. ", 
+                 percent(as.numeric(cited_df[1,2]), .1))
+
+
+search_rate_tbl <- mini_traffic %>% group_by(is_black) %>% summarize(search_rate = sum(searched) / n(),
+                                                                     about_in = as.integer(1 / search_rate))
+
+searched_share_tbl <- mini_traffic %>% group_by(searched) %>% summarize(searched_share = sum(is_black) / n())
+fact_3 <- paste0("<b>1 out of ", search_rate_tbl[2,3][[1]], 
+                 "</b> African American drivers it stops, compared to <b>1 out of ",
+                 search_rate_tbl[1,3][[1]],
+                 "</b> non-African Americans motorists, with <b>",
+                 percent(searched_share_tbl[2,2][[1]], .1),
+                 "</b> of all vehicle searches conducted on African Americans")
+```
+
+
 # Introduction
 
 UCPD releases three types of data on their data page. This data is not directly downloadable and was web scraped into a database which was then standardized. The three types of data include *[The Daily Incident Report](https://incidentreports.uchicago.edu/)*, which includes crimes and fires reported to UCPD in its patrol area, *[Traffic Stops](https://incidentreports.uchicago.edu/trafficStops.php)*, and *[Field Interviews](https://incidentreports.uchicago.edu/fieldInterviews.php)*.
 
-Note that 2019 numbers are through December 6, 2019.
+# Summary
+
+The University of Chicago Police Department (UCPD) polices about 3.5 square miles of Chicago's south side. About 50,000 Chicagoans, of which about 50% are African American, live permanently in their patrol area. UCPD's data shows that African Americans are stopped, searched, and cited at rates higher than any other racial group. Including that:
+
+- Since 2015, <b>`r fact_1` of street interviews</b> UCPD conducted were with African Americans
+- During traffic stops, African Americans received citations at almost double the rate of non-African Americans <b>(`r fact_2`)</b>
+- UCPD searches `r fact_3`
+- Half of all searches conducted on African Americans ended without a citation
+- 36 out of 37 traffic stop searches in 2019 were conducted on African American drivers
+- In 2019, African Americans were cited at 10.8% and non-African Americans were cited at 6.0%
+
+# Dashboard Overview of Police Actions
+```{r}
+traffic_cnts <- traffic_full %>% group_by(month) %>% summarize(Quantity = n(),
+                                                          Citations = sum(cited))
+
+traffic_cnts2 <- traffic_full %>% group_by(month, is_black) %>% summarize(Citation_rate = sum(cited) / n()) %>% mutate(cat_name = ifelse(is_black == 0, "Non-African American", "African American"))
+
+traffic_cnts3 <- traffic_full %>% group_by(month, Race) %>% summarize(citation_num = n()) %>% filter(Race != "NHPI or Indian")
+
+ggplot(data = traffic_cnts, aes(month, Quantity)) + 
+  geom_smooth(se=FALSE, color='black', size=2) + 
+  geom_point(alpha = 0.2) + 
+  geom_smooth(aes(y=Citations),se=FALSE, size=2) + 
+  geom_point(aes(y=Citations),color='blue', alpha=0.2) +
+  labs(x=NULL, y="Number of Actions per Month", title="Average Monthly Number of Traffic Actions", subtitle="Stops (black). Citations (blue).") + theme_classic()
+
+ggplot(data = traffic_cnts2, aes(month, Citation_rate, color=factor(cat_name))) + 
+  geom_smooth(se=FALSE, size=2) + 
+  geom_point(alpha = 0.2) + 
+  labs(x=NULL, y="Percent Cited", title="Citation Rates for African Americans vs. Non-African Americans", color="Racial Group") + theme_classic()
+
+ggplot(data = traffic_cnts3, aes(month, citation_num, color=factor(Race))) + 
+  geom_smooth(se=FALSE, size=2) + 
+  geom_point(alpha = 0.2) + 
+  labs(x=NULL, y="Number of Citations per month", title="Traffic Citations by Race", color="Racial Group") + theme_classic()
+
+
+
+theft_by_month <- incident %>% filter(Date=="Theft") %>% group_by(Month) %>% summarize(cnt=n())
+
+ggplot(data=theft_by_month, aes(Month, cnt)) + geom_smooth() + geom_point(alpha = 0.2) +
+  labs(x=NULL, y="Thefts per Month", title="Reported Thefts per Month") + theme_classic()
+
+battery_by_month <- incident %>% filter(Date=="Battery") %>% group_by(Month) %>% summarize(cnt=n())
+
+ggplot(data=battery_by_month, aes(Month, cnt)) + geom_smooth() + geom_point(alpha = 0.2) +
+  labs(x=NULL, y="Battery per Month", title="Reported Batteries per Month") + theme_classic()
+
+
+ggplot(mini_traffic %>% group_by(Race) %>% summarize(`Citation Rate Once Stopped` = sum(cited) / n()), aes(Race, `Citation Rate Once Stopped`)) + geom_bar(position="dodge", stat="identity") + labs(title="Traffic Citation Rate") + theme_minimal() +
+  scale_y_continuous(labels=percent_format()) +
+  theme(text = element_text(size=15))
+
+ggplot(mini_traffic %>% group_by(Race) %>% summarize(`Search Rate Once Stopped` = sum(searched) / n()), aes(Race, `Search Rate Once Stopped`)) + geom_bar(position="dodge", stat="identity") + labs(title="Traffic Search Rate") + theme_minimal() +
+  scale_y_continuous(labels=percent_format()) +
+  theme(text = element_text(size=15))
+
+ggplot(interview %>% filter(Race != "other") %>% group_by(Race) %>% summarize(`Number of Searches` = sum(searched)), 
+       aes(Race, `Number of Searches`)) + labs(title="Interview Searches") + geom_bar(position="dodge", stat="identity") + theme_minimal() +
+  theme(text = element_text(size=15))
+
+```
+
+
+
+
+
+
+# Summary Tables
 
 ## Number of interactions with UCPD by Year
 ```{r}
@@ -86,7 +191,6 @@ kable(traffic %>% group_by(Year, Disposition) %>%
   pivot_wider(names_from = c("Disposition"), values_from = Total) %>%
   mutate(Arrest = replace_na(Arrest, 0)), caption="Table 4: Traffic Outcomes") %>% kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
-mini_traffic <- traffic %>% filter(Disposition != "Arrest", Race != "NHPI or Indian", `IDOT Classification` != "Other")
 
 race_cnts <- mini_traffic %>% group_by(Race) %>% summarize(`Total (by Race)` = n())
 
@@ -112,13 +216,6 @@ kable(search_race %>% select(-`Total (by Race)`), caption="Table 6: Traffic Sear
 kable(violation_race, caption="Table 7: Traffic Violation Outcomes by Race") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
-
-mini_traffic <-
-  mini_traffic %>% mutate(searched = ifelse(Search == "Yes", 1, 0),
-                          cited = ifelse(Disposition == "Citation", 1, 0),
-                          searched_and_cited = ifelse(searched == 1 & cited == 1, 1, 0),
-                          searched_and_not_cited = ifelse(searched == 1 & cited == 0, 1, 0),
-                          warning = ifelse(Disposition == "Warning", 1, 0))
 all_interactions <- 
   mini_traffic %>% group_by(Year, Race) %>% summarize(pct_search = sum(searched) / n(),
                                                      pct_cited = sum(cited) / n(),
@@ -131,13 +228,6 @@ all_interactions <- all_interactions %>% mutate_at(vars(pct_search:pct_warning),
 kable(all_interactions, caption = "Table 8: Traffic Stop Outcomes by Race and Year") %>%
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
-ggplot(mini_traffic %>% group_by(Race) %>% summarize(`Citation Rate Once Stopped` = sum(cited) / n()), aes(Race, `Citation Rate Once Stopped`)) + geom_bar(position="dodge", stat="identity") + theme_minimal() +
-  scale_y_continuous(labels=percent_format()) +
-  theme(text = element_text(size=15))
-
-ggplot(mini_traffic %>% group_by(Race) %>% summarize(`Search Rate Once Stopped` = sum(searched) / n()), aes(Race, `Search Rate Once Stopped`)) + geom_bar(position="dodge", stat="identity") + theme_minimal() +
-  scale_y_continuous(labels=percent_format()) +
-  theme(text = element_text(size=15))
 
 ```
 
@@ -173,16 +263,11 @@ kable(int_search_race %>% select(-`Total (by Race)`), caption="Table 10: Intervi
 kable(int_disp_race, caption="Table 11: Interview Disposition Outcomes by Race") %>% 
   kable_styling(bootstrap_options = c("striped", "hover", "condensed", "responsive"), full_width = FALSE)
 
-ggplot(interview %>% filter(Race != "other") %>% group_by(Race) %>% summarize(`Number of Searches` = sum(searched)), 
-       aes(Race, `Number of Searches`)) + geom_bar(position="dodge", stat="identity") + theme_minimal() +
-  theme(text = element_text(size=15))
 
 ```
 
 ## Incident Outcomes
 ```{r}
-incident$Month <- as.Date(cut(incident$Occured,
-  breaks = "month"))
 ggplot(incident %>% filter(Year > 2015), aes(Month)) + geom_bar() + 
   labs(y="Number of Incidents Per Month") + theme_minimal()
 
@@ -202,17 +287,6 @@ kable(outcome_by_year %>% pivot_wider(names_from = "Outcome", values_from = "n")
 
 
 ```
-
-## Gaps
-```{r}
-tst <- interview %>% filter(is_black==0) %>% arrange(Date) %>%
-  mutate(previous = lag(Date, 1),
-         day_difference = (Date - previous)/(60*60*24))
-
-max <- tst %>% filter(day_difference == max(day_difference, na.rm=T))
-```
-
-For over half a year from 9/17/2016 to 3/10/2017, UCPD only interviewed African Americans.
 
 # UCPD Patrol Area
 
@@ -239,9 +313,7 @@ rslt <- rslt %>% mutate(share_non_white = (total_pop - white_pop) / total_pop)
 
 pal <- colorNumeric(palette="Blues", rslt$share_non_white, na.color="Grey")
 
-
 UCPD_area <- st_transform(UCPD_area, 4326)
-
 
 leaflet(width="100%") %>% addTiles() %>% 
   addPolygons(data=rslt, 
@@ -258,10 +330,8 @@ leaflet(width="100%") %>% addTiles() %>%
               color="black") %>%
 addLegend(pal = pal, values = rslt$share_non_white, 
           opacity = 0.7, title = "Share Non-White Population", position = "bottomright")
-
-
 ```
 
-## Github Directory
+# Github Directory
 https://github.com/erhla/UCPD
 
