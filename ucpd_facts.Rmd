@@ -1,5 +1,5 @@
 ---
-title: "Appendix 1: University of Chicago Police Department Open Data Analysis"
+title: "University of Chicago Police Department Open Data Analysis"
 output:
   html_document:
     toc: true
@@ -116,6 +116,7 @@ traffic_cnts <- traffic_full %>% group_by(month) %>% summarize(Quantity = n(),
 
 traffic_cnts2 <- traffic_full %>% group_by(month, is_black) %>% summarize(Citation_rate = sum(cited) / n()) %>% mutate(cat_name = ifelse(is_black == 0, "Non-African American", "African American"))
 
+traffic_cnts25 <- traffic_full %>% filter(Race %in% c("African American", "Caucasian")) %>% group_by(month, Race) %>% summarize(Citation_rate = sum(cited) / n())
 traffic_cnts3 <- traffic_full %>% group_by(month, Race) %>% summarize(citation_num = n()) %>% filter(Race != "NHPI or Indian")
 
 ggplot(data = traffic_cnts, aes(month, Quantity)) + 
@@ -129,6 +130,11 @@ ggplot(data = traffic_cnts2, aes(month, Citation_rate, color=factor(cat_name))) 
   geom_smooth(se=FALSE, size=2) + 
   geom_point(alpha = 0.2) + 
   labs(x=NULL, y="Percent Cited", title="Citation Rates for African Americans vs. Non-African Americans", color="Racial Group") + theme_classic()
+
+ggplot(data = traffic_cnts25, aes(month, Citation_rate, color=factor(Race))) + 
+  geom_smooth(se=FALSE, size=2) + 
+  geom_point(alpha = 0.2) + 
+  labs(x=NULL, y="Percent Cited", title="Citation Rates for African Americans vs. Caucasians", color="Race") + theme_classic()
 
 ggplot(data = traffic_cnts3, aes(month, citation_num, color=factor(Race))) + 
   geom_smooth(se=FALSE, size=2) + 
@@ -147,6 +153,10 @@ battery_by_month <- incident %>% filter(Date=="Battery") %>% group_by(Month) %>%
 ggplot(data=battery_by_month, aes(Month, cnt)) + geom_smooth() + geom_point(alpha = 0.2) +
   labs(x=NULL, y="Battery per Month", title="Reported Batteries per Month") + theme_classic()
 
+assault_by_month <- incident %>% filter(Date=="Assault") %>% group_by(Month) %>% summarize(cnt=n())
+
+ggplot(data=assault_by_month, aes(Month, cnt)) + geom_smooth() + geom_point(alpha = 0.2) +
+  labs(x=NULL, y="Assault per Month", title="Reported Assaults per Month") + theme_classic()
 
 ggplot(mini_traffic %>% group_by(Race) %>% summarize(`Citation Rate Once Stopped` = sum(cited) / n()), aes(Race, `Citation Rate Once Stopped`)) + geom_bar(position="dodge", stat="identity") + labs(title="Traffic Citation Rate") + theme_minimal() +
   scale_y_continuous(labels=percent_format()) +
