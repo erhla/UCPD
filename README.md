@@ -24,4 +24,4 @@ I offer the following recommendations.
 
 Check out the [full analysis here](UCPD%20open%20data%20analysis.html).
 
-The raw data from UCPD is [available here](files/).
+The raw data from UCPD is [available here](https://github.com/erhla/UCPD/tree/master/files/).
