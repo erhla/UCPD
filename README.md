@@ -5,12 +5,12 @@ To: Eric Heath, Associate Vice President for Safety & Security.
 
 The University of Chicago Police Department (UCPD) polices about 50,000 Chicagoans, of which about 50% are African American.  UCPD releases a variety of data daily on its activities which show that African Americans are stopped, searched, and cited at rates higher than any other racial group. Including that:
 
--	Since 2015, about 75% of traffic stops and 98% of street interviews UCPD conducted were with African Americans
--	During traffic stops, African Americans received citations at almost double the rate of non-African Americans (13.6% vs. 7.1%)
--	UCPD searches 1 out of 40 African American drivers it stops, compared to 1 out of 260 non-African Americans motorists, with almost 95% of all vehicle searches conducted on African Americans
--	Over half of all searches conducted on African American ended without a citation, including 2/3rds of searches in 2019
--	34 out of 35 traffic stop searches in 2019 were conducted on African American drivers
--	In 2019, African Americans were cited at 10.9% and non-African Americans were cited at 5.0%
+- Since 2015, 73.3% of traffic stops and 93.7% of street interviews UCPD conducted were with African Americans
+- During traffic stops, African Americans received citations at almost double the rate of non-African Americans (13.5% vs. 6.9%)
+- UCPD searches 1 out of 39 African American drivers it stops, compared to 1 out of 268 non-African Americans motorists, with 95.0% of all vehicle searches conducted on African Americans
+- Half of all searches conducted on African Americans ended without a citation
+- 36 out of 37 traffic stop searches in 2019 were conducted on African American drivers
+- In 2019, African Americans were cited at 10.8% and non-African Americans were cited at 6.0%
 
 I offer the following recommendations.
 
