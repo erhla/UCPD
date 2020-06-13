@@ -22,6 +22,6 @@ I offer the following recommendations.
 
 **Fourth, to undertake annual transparency reports of racial bias in UCPD.** Even if racial bias is inadvertent due to other factors not captured in this analysis, the appearance of such disparate racial outcomes in UCPD’s data necessitates formal and consistent attention from UC if UCPD is to be legitimate when policing African American non-affiliates. The continued reevaluation of issues around race and the department will allow UCPD to enter into dialogue with community members and to ultimately create a more effective department. Additionally, an annual report could highlight community policing or positive interactions between UCPD and community members which would otherwise go unnoticed.
 
-Check out the [full analysis here](UCPD%20open%20data%20analysis.html).
+Check out the [full analysis here](ucpd_facts.html).
 
 The raw data from UCPD is [available here](https://github.com/erhla/UCPD/tree/master/files/).
