@@ -25,14 +25,15 @@ knitr::opts_chunk$set(echo = FALSE, warning = FALSE, message = FALSE)
 #prepare data
 traffic <- read_csv("files/traffic_cleaned.csv")
 traffic <- traffic %>% mutate(Year = year(Date))
+traffic <- traffic %>% filter(complete.cases(traffic))
 
 interview <- read_csv("files/interview_cleaned.csv")
 interview <- interview %>% mutate(Year = year(Date)) %>%
-  filter(between(Year, 2015, 2019))
+  filter(between(Year, 2015, 2020))
 
 incident <- read_csv("files/incident_cleaned.csv")
 incident <- incident %>% mutate(Year = year(Occured)) %>%
-  filter(between(Year, 2015, 2019), Outcome != "void")
+  filter(between(Year, 2015, 2020), Outcome != "void")
 incident$Month <- as.Date(cut(incident$Occured,
   breaks = "month"))
 
@@ -47,7 +48,7 @@ traffic <- traffic %>% mutate(is_black = ifelse(Race == "African American", 1, 0
 
 traffic_full <- traffic
 traffic <- traffic %>%
-  filter(between(Year, 2015, 2019))
+  filter(between(Year, 2015, 2020))
 
 interview <- interview %>% mutate(is_black = ifelse(Race == "African American", 1, 0),
                                   searched = ifelse(Search == "Yes", 1, 0))
@@ -73,7 +74,7 @@ cook_pop <- st_transform(cook_pop, st_crs(UCPD_area))
 ```
 
 ```{r fact_strs}
-fact_1 <- paste0(traffic %>% summarize(sum(is_black) / n()) %>% as.numeric() %>% percent(., .1), " of traffic stops and ", interview %>% summarize(sum(is_black) / n()) %>% as.numeric() %>% percent(., .1))
+fact_1 <- paste0(traffic %>% summarize(sum(is_black, na.rm=T) / n()) %>% as.numeric() %>% percent(., .1), " of traffic stops and ", interview %>% summarize(sum(is_black) / n()) %>% as.numeric() %>% percent(., .1))
 
 cited_df <- mini_traffic %>% group_by(is_black) %>% summarize(sum(cited) / n())
 
