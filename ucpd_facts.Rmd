@@ -100,7 +100,7 @@ UCPD releases three types of data on their data page. This data is not directly 
 
 # Summary
 
-*Data updated through `r str_glue("{max(incident$Occured, na.rm=T)}")`.*
+*Data includes `r str_glue("{min(incident$Occured, na.rm=T)} to {max(incident$Occured, na.rm=T)}")`.*
 
 The University of Chicago Police Department (UCPD) polices about 3.5 square miles of Chicago's south side. About 50,000 Chicagoans, of which about 50% are African American, live permanently in their patrol area. UCPD's data shows that African Americans are stopped, searched, and cited at rates higher than any other racial group. Including that:
 
@@ -110,6 +110,33 @@ The University of Chicago Police Department (UCPD) polices about 3.5 square mile
 - Half of all searches conducted on African Americans ended without a citation
 - 36 out of 37 traffic stop searches in 2019 were conducted on African American drivers
 - In 2019, African Americans were cited at 10.8% and non-African Americans were cited at 6.0%
+
+## Last 365 Days
+
+```{r}
+maxd <- max(incident$Occured)
+mind <- maxd - 365
+
+lasty_traffic <- traffic %>% filter(Date >= max(Date) - 365*24*60*60)
+lasty_interview <- interview%>% filter(Date >= max(Date) - 365*24*60*60)
+
+lasty_searched <- lasty_traffic %>% count(searched, is_black)
+lasty_cited <- lasty_traffic %>% count(cited, is_black)
+
+s1 <- lasty_searched %>% summarize(n = sum(n[searched == 1])) %>% pull(n)
+s2 <- lasty_searched %>% summarize(n = sum(n[searched == 1 & is_black == 1])) %>% pull(n)
+
+i1 <- lasty_cited %>% summarize(n = sum(n[cited == 1])) %>% pull(n)
+i2 <- lasty_cited %>% summarize(n = sum(n[cited == 1 & is_black == 1])) %>% pull(n)
+```
+
+
+For the last 12 months of data which range from `r str_glue("{mind} to {maxd}")`.
+
+- For the last 12 months, `r str_glue("there have been {nrow(lasty_traffic)} traffic stops. {sum(lasty_traffic$is_black)} drivers were African American ({percent(sum(lasty_traffic$is_black) / nrow(lasty_traffic))}).")`
+- For the last 12 months, `r str_glue("there have been {nrow(lasty_interview)} interviews. {sum(lasty_interview$is_black)} of the interviewed were African American ({percent(sum(lasty_interview$is_black) / nrow(lasty_interview))}).")`
+- For the last 12 months, UCPD has searched `r str_glue("{s1} drivers. {s2} were African American ({percent(s2/s1)}).")`
+- For the last 12 months, UCPD has issued `r str_glue("{i1} citations. {i2} were issued to African American drivers ({percent(i2/i1)}).")` 
 
 # Dashboard Overview of Police Actions
 ```{r}
